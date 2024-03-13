@@ -1,5 +1,6 @@
+/*jshint esversion: 6 */
 
-const shortenUrl = async () => {
+const shortenUrl = () => {
     const originalUrl = document.getElementById('original-url').value;
     const settings = {
         method: 'POST',
@@ -9,27 +10,27 @@ const shortenUrl = async () => {
         },
         body: JSON.stringify({'original_url': originalUrl})
     };
-    const response = await fetch('/url/', settings);
+    const response = fetch('/url/', settings);
     const shortUrlContainer = document.getElementById('short-url-container');
     const errorContainer = document.getElementById('error-container');
     if (!response.ok){
       errorContainer.style.display = 'block';
       shortUrlContainer.style.display = 'none';
       document.body.style.backgroundColor = '#ff4545';
-      return
+      return;
     }
     errorContainer.style.display = 'none';
     document.body.style.backgroundColor = '#91f086';
-    const data = await response.json();
+    const data = response.json();
     const shortUrlLink = document.getElementById('short-url').querySelector('a');
     shortUrlLink.href = `/${data.id}`;
     shortUrlLink.textContent = `${window.location.origin}/${data.id}`;
     shortUrlContainer.style.display = 'block';
     const copyBtn = document.getElementById('copy-btn');
-    copyBtn.textContent = '  Copy '
+    copyBtn.textContent = '  Copy ';
     copyBtn.addEventListener('click', () => {
       navigator.clipboard.writeText(shortUrlLink.textContent).then(() => {
-        copyBtn.textContent = 'Copied !'
+        copyBtn.textContent = 'Copied !';
       });
     });
   };

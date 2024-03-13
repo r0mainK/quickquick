@@ -1,8 +1,10 @@
 # QuickQuick
 
-Minimal URL shortening service. 
+[![code-style](https://github.com/r0mainK/quickquick/actions/workflows/code-style.yml/badge.svg)](https://github.com/r0mainK/quickquick/actions/workflows/code-style.yml)
+
+Minimal URL shortening service.
 The frontend has a touch of JS and CSS but nothing too fancy.
-The backend is made in Python, with the help of a couple packages: FastAPI, SQLAlchemy and Pydantic. 
+The backend is made in Python, with the help of a couple packages: FastAPI, SQLAlchemy and Pydantic.
 The database is SQLite.
 
 ## Usage
@@ -16,11 +18,11 @@ docker run --rm -p 80:80 quickquick
 
 Note that:
 
-- a volume will persist the Database, it is mounted to `/opt/db` 
+- a volume will persist the Database, it is mounted to `/opt/db`
 - you can run the container in the background using "detached" mode
-- you can enable the documentation endpoints by overriding the `DISABLE_DOCUMENTATION` environment variable 
+- you can enable the documentation endpoints by overriding the `DISABLE_DOCUMENTATION` environment variable
 
-### Via a virtual environment 
+### Via a virtual environment
 
 You will need:
 

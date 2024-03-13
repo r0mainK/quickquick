@@ -32,3 +32,7 @@ repos:
         - --arg-type-hints-in-docstring=false
         - --check-return-types=false
         - --check-yield-types=false
+-   repo: https://github.com/pre-commit/mirrors-jshint
+    rev: 'v2.13.6'
+    hooks:
+    -   id: jshint
