@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>URL Shortener</title>
+  <style>
+    body {
+      font-family: Sans-Serif;
+      text-align: center;
+      height: 100%
+    }
+
+    div.maincontainer {
+      margin: 0;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      -ms-transform: translate(-50%);
+      transform: translate(-50%);
+    }
+
+    /*
+    Not great to use REM values in this code, maybe work on this later. 
+    */
+
+    input {
+      font-size: 1.5rem;
+      width: 50rem;
+      padding: .2rem .2rem;
+    }
+
+    button {
+      font-size: 1.5rem;
+      width: 7rem;
+      padding: .2rem .2rem;
+      text-align: center;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="URL shortener service, made with love using Python, SQLite and some JS.
+                                      Python modules used are FastAPI, SQLAlchemy and Pydantic.">
+</head>
+
+<body>
+  <div class="maincontainer">
+    <font size="6rem">
+      <h1>URL Shortener</h1>
+      <div>
+        <input type="text" id="original-url" name="original-url" placeholder="Enter your URL">
+        <button type="button" id="shorten-btn" style="margin-left: -0.6rem;">Shorten</button>
+      </div>
+      <div id="error-container" style="display:none">
+        <p>Invalid URL.</p>
+        <font size="5rem">
+          <p>We only support properly formed HTTP(S) URLs like:
+            <a href="https://wikipedia.org/wiki/url" target="_blank">https://wikipedia.org/wiki/url</a>
+          </p>
+        </font>
+      </div>
+      <div id="short-url-container" style="display:none">
+        <p>Here's your shortened URL:</p>
+        <font size="5rem">
+          <div id="short-url">
+            <a href="" target="_blank"></a>
+        </font>
+        <button type="button" id="copy-btn"></button>
+      </div>
+  </div>
+  </font>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "quickquick"
+version = "0.1.0"
+description = "Minimal URL shortening service."
+authors = ["Romain Keramitas <r.keramitas@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.0"
+uvicorn = { extras = ["standard"], version = "^0.27.1" }
+SQLAlchemy = "^2.0.27"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
